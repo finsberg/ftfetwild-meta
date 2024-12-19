@@ -16,7 +16,7 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 10 --slave /u
 RUN echo | update-alternatives --config gcc
 
 # Clone and install wildmeshing-python package
-RUN git clone https://github.com/wildmeshing/wildmeshing-python.git --recurse-submodules
+RUN git clone -b dokken/update-cmake --single-branch https://github.com/jorgensd/wildmeshing-python.git --recurse-submodules
 RUN python3 -m pip install ./wildmeshing-python -vv
 
 # We remove the contents of the temporary directory to minimize the size of the image
