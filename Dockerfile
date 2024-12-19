@@ -6,7 +6,7 @@ WORKDIR /tmp/
 
 # Install all dependencies
 RUN pip install --no-cache-dir h5py --no-binary=h5py
-RUN pip install nibabel typer scikit-image pyvista meshio pyyaml
+RUN pip install nibabel typer scikit-image pyvista meshio pyyaml mri2mesh jupyter
 RUN python3 -m pip install --no-build-isolation git+https://github.com/scientificcomputing/scifem.git
 # Change default gcc to 10 (needed for fTetWild)
 RUN apt update && apt install -y software-properties-common libgmp3-dev
