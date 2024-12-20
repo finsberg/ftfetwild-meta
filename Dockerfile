@@ -5,6 +5,7 @@ FROM dolfinx/dolfinx:v0.9.0
 WORKDIR /tmp/
 
 # Install all dependencies
+RUN apt update && apt install -y libgl1-mesa-glx xvfb
 RUN pip install --no-cache-dir h5py --no-binary=h5py
 RUN pip install nibabel typer scikit-image pyvista meshio pyyaml mri2mesh jupyter
 RUN python3 -m pip install --no-build-isolation git+https://github.com/scientificcomputing/scifem.git
